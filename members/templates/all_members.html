@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}all members{% endblock %}
+{% block content %}<h1>All Members</h1>
+<ul>
+    {% for x in members %}
+    <li>{{x.firstName}} {{x.lastName}}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'first' %}">Go to first Page</a>{% endblock %}

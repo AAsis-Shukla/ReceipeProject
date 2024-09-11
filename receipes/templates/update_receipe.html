@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card p-4 shadow-lg">
+            <h1 class="text-center text-primary mb-4">Add Recipe</h1>
+
+           
+            <span class="text-danger">{{ error_msg }}</span>
+            <span class="text-success">{{ seccess_msg }}</span>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+            
+                <div class="mb-3">
+                    <label for="Receipe_name" class="form-label">Recipe Name</label>
+                    <input type="text" class="form-control" name="Receipe_name" id="Receipe_name" value="{{ form.Receipe_name }}" required>
+                </div>
+
+           
+                <div class="mb-3">
+                    <label for="Receipe_description" class="form-label">Recipe Description</label>
+                    <textarea class="form-control" name="Receipe_description" id="Receipe_description" rows="5" required>{{ form.Receipe_description }}</textarea>
+                </div>
+
+         
+                <div class="mb-3">
+                    <label for="Receipe_image" class="form-label">Recipe Image</label>
+                    <input type="file" class="form-control" name="Receipe_image" id="Receipe_image" required>
+                </div>
+
+              
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Update Recipe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
